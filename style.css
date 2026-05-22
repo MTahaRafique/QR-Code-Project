@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    /* DARK GRADIENT BACKGROUND */
+    background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+}
+
+/* MAIN CARD (GLASS EFFECT) */
+.container{
+    width:420px;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+h1{
+    color:white;
+    font-size:28px;
+    margin-bottom:8px;
+    font-weight:700;
+}
+
+/* SUBTITLE */
+.subtitle{
+    color:rgba(255,255,255,0.7);
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+/* INPUT (GLASS STYLE) */
+input{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+
+    color:white;
+    outline:none;
+    font-size:15px;
+}
+
+input::placeholder{
+    color:rgba(255,255,255,0.5);
+}
+
+input:focus{
+    border-color:#60a5fa;
+    box-shadow:0 0 12px rgba(96,165,250,0.4);
+}
+
+/* BUTTON (GRADIENT MODERN) */
+button{
+    width:100%;
+    margin-top:15px;
+    padding:14px;
+
+    border:none;
+    border-radius:12px;
+
+    font-size:15px;
+    font-weight:600;
+    color:white;
+
+    background: linear-gradient(135deg,#3b82f6,#8b5cf6);
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(59,130,246,0.4);
+}
+
+/* QR BOX */
+.qr-container{
+    margin-top:25px;
+    background:white;
+    padding:20px;
+    border-radius:16px;
+}
+
+/* QR IMAGE */
+.qr-container img{
+    width: 180px;        /* FIXED SMALLER SIZE */
+    height: 180px;
+    object-fit: contain;
+
+    padding: 10px;
+    border-radius: 12px;
+    background: white;
+
+    display: block;
+    margin: 0 auto;
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn{
+    margin-top:15px;
+    background: linear-gradient(135deg,#10b981,#3b82f6);
+}
+
+/* ANIMATION */
+.container{
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
