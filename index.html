@@ -5,36 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- QR Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
 
 <div class="container">
-
+    <h1><b>Muhammad Taha</b></h1>
+    <br>
+    <br> 
     <h1>QR Code Generator</h1>
 
-    <form method="POST">
+    <div class="card">
 
-        <input type="text"
-               name="url"
-               placeholder="Enter URL"
-               required>
+        <input type="text" id="text" placeholder="Enter URL or text">
 
-        <button type="submit">
-            Generate QR
-        </button>
+        <button onclick="generateQR()">Generate QR</button>
 
-    </form>
+        <div id="qrcode"></div>
 
-    {% if qr_image %}
-
-        <img src="{{ qr_image }}">
-
-    {% endif %}
+    </div>
 
 </div>
+
+<script>
+function generateQR() {
+    let text = document.getElementById("text").value;
+
+    let qrContainer = document.getElementById("qrcode");
+    qrContainer.innerHTML = "";
+
+    if(text.trim() === ""){
+        alert("Please enter text or URL");
+        return;
+    }
+
+    new QRCode(qrContainer, {
+        text: text,
+        width: 200,
+        height: 200,
+        colorDark: "#ffffff",
+        colorLight: "#1f2937"
+    });
+}
+</script>
 
 </body>
 </html>
